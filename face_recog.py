@@ -35,3 +35,15 @@ s=True
 
 now=datetime.now()
 current_date = now.strftime("%Y-%m-%d")
+
+f = open(current_date+'.csv','w+',newline = '')
+lnwriter = csv.writer(f)
+
+while True:
+    _,frame = video_capture.read()
+    small_frame =cv2.resize(frame,(0,0),fx=0.25,fy=0.25)
+    rgb_small_frame = small_frame[:,:,::-1]
+    if s:
+        face_location = face_recognition.face_locations(rgb_small_frame)
+        face_encoding = face_recognition.face_encodings(rgb_small_frame,face_locations)
+        face_names = []
