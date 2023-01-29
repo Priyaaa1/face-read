@@ -27,11 +27,3 @@ known_face_encoding = [ akshay_encoding, modi_encoding, priyanka_encoding, tata_
 known_face_names = ["akshay", "modi", "priyanka", "tata", "kohli"]
 
 students = known_face_names.copy()
-
-face_location = []
-face_encoding = []
-face_names = []
-s=True
-
-now=datetime.now()
-current_date = now.strftime("%Y-%m-%d")
